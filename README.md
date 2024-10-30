@@ -30,14 +30,10 @@ Below is an example configuration file, `server.nix`, for creating the VM. It in
 
 ```nix
 { config
-, lib
 , pkgs
-, modulesPath
 , ... }:
 {
   networking.usePredictableInterfaceNames = false;
-  imports = [
-  ];
   environment.systemPackages = with pkgs; [
     inetutils
     tcpdump
@@ -48,7 +44,6 @@ Below is an example configuration file, `server.nix`, for creating the VM. It in
     traceroute
     vim
   ];
-  networking.firewall.allowedTCPPorts = [ 23 ];
   environment.shellAliases = {
     "x" = "exit";
     "c" = "clear";
@@ -56,12 +51,13 @@ Below is an example configuration file, `server.nix`, for creating the VM. It in
     "..." = "cd ../../";
     "grep" = "grep --color -i";
     "ack" = "ack -Q";
+    "ncat" = "nc";
   };
 
   users.motd = "GNS3-NixOS-Server";
   services.getty.autologinUser = "root";
   security.sudo.wheelNeedsPassword = false;
-  networking.hostName = "server"; #default and should be overridden by systemd
+  networking.hostName = "server"; #default and should get overridden by systemd
   users.extraUsers.cisco = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
@@ -80,3 +76,4 @@ Below is an example configuration file, `server.nix`, for creating the VM. It in
     };
   };
 }
+
