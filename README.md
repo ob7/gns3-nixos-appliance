@@ -1,4 +1,4 @@
-3 NixOS QEMU VM Generator
+# GNS3 NixOS QEMU VM Generator
 
 This setup enables the generation of NixOS VMs in qcow2 format for GNS3, using [nixos-generators](https://github.com/nix-community/nixos-generators). It includes automatic hostname configuration for each VM based on the GNS3 instance name. 
 
