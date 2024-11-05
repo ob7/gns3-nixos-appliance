@@ -21,7 +21,7 @@
 
   services.getty.autologinUser = "root";
   security.sudo.wheelNeedsPassword = false;
-  #networking.hostName = "server"; #default and should get overridden by systemd
+  #networking.hostName = "nixos"; #default and should be overridden by systemd
   users.extraUsers.cisco = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
