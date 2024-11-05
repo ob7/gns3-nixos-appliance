@@ -79,3 +79,10 @@ Below is an example configuration file, `server.nix`, for creating the VM. It in
   };
 }
 
+```
+
+This appliance is also available on the GNS3 marketplace:
+https://www.gns3.com/marketplace/appliances/nixos
+
+original gns3-registry pull request:
+https://github.com/GNS3/gns3-registry/pull/931
