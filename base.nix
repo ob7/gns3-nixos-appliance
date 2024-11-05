@@ -40,7 +40,6 @@
       #!${pkgs.bash}/bin/bash
       if [ -f /sys/firmware/qemu_fw_cfg/by_name/opt/vm_hostname/raw ]; then
         hostname=$(cat /sys/firmware/qemu_fw_cfg/by_name/opt/vm_hostname/raw)
-        ## Set kernel hostname
         echo "$hostname" > /proc/sys/kernel/hostname
         echo "$hostname" > /etc/hostname
       fi
