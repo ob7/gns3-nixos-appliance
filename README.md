@@ -27,7 +27,8 @@ This setup enables the generation of NixOS VMs in qcow2 format for GNS3, using [
 ## Sample `server.nix` Configuration
 
 Below is an example configuration file, `server.nix`, for creating the VM. It includes settings for network tools, shell aliases, and a systemd service to set the hostname dynamically from the GNS3 instance name.  
-<sub>Reference server.nix, pc.nix, etc directly in this repo for most up to date code.</sub>
+
+<sub>*(Reference server.nix, pc.nix, etc directly in this repo for most up to date code)*</sub>
 
 ```nix
 { config
