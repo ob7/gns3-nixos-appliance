@@ -80,7 +80,7 @@ Below is an example configuration file, `server.nix`, for creating the VM. It in
 }
 
 ```
-
+##
 This appliance is also available on the GNS3 marketplace:
 https://www.gns3.com/marketplace/appliances/nixos
 
