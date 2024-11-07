@@ -23,10 +23,10 @@
     ./base.nix
   ];
 
-	networking = {
-		domain = "lab.local";
-		search = [ "lab.local" ];
-  };
+	#networking = {
+	#  domain = "lab.local";
+	#  search = [ "lab.local" ];
+  #};
 
   networking.firewall.enable = false;
 }
