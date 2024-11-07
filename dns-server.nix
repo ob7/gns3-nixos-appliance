@@ -22,18 +22,18 @@
     '';
     
     zones = {
-      "lab.local" = {
+      "this.lab" = {
         master = true;
-        file = pkgs.writeText "lab.local" ''
+        file = pkgs.writeText "this.lab" ''
           $TTL 86400
-          @       IN      SOA     ns1.lab.local. admin.lab.local. (
+          @       IN      SOA     ns1.this.lab. admin.this.lab. (
                                   2024110201      ; Serial
                                   3600            ; Refresh
                                   1800            ; Retry
                                   604800          ; Expire
                                   86400 )         ; Minimum TTL
 
-                  IN      NS      ns1.lab.local.
+                  IN      NS      ns1.this.lab.
           ns1     IN      A       192.168.1.53
 
           ; Add your lab devices below
@@ -49,21 +49,21 @@
         master = true;
         file = pkgs.writeText "1.168.192.rev" ''
           $TTL 86400
-          @       IN      SOA     ns1.lab.local. admin.lab.local. (
+          @       IN      SOA     ns1.this.lab. admin.this.lab. (
                                   2024110201      ; Serial
                                   3600            ; Refresh
                                   1800            ; Retry
                                   604800          ; Expire
                                   86400 )         ; Minimum TTL
 
-                  IN      NS      ns1.lab.local.
+                  IN      NS      ns1.this.lab.
 
           ; Reverse records
-          53      IN      PTR     ns1.lab.local.
-          1       IN      PTR     router1.lab.local.
-          2       IN      PTR     switch1.lab.local.
-          10      IN      PTR     host1.lab.local.
-          11      IN      PTR     host2.lab.local.
+          53      IN      PTR     ns1.this.lab.
+          1       IN      PTR     router1.this.lab.
+          2       IN      PTR     switch1.this.lab.
+          10      IN      PTR     host1.this.lab.
+          11      IN      PTR     host2.this.lab.
         '';
       };
     };
@@ -90,3 +90,9 @@
   };
 
 }
+
+
+
+#TODO
+# - make configurable through web browser so new entries etc can be added without rebuilding entire iso
+
