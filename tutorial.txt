@@ -12,3 +12,23 @@ or create your own as any other qemu appliance but pass the vm name in advanced 
 
 -fw_cfg name=opt/vm_hostname,string=%vm-name%
 
+
+base.nix
+Contains logic for setting hostname.  Must be imported into another file such as pc.nix, server.nix, etc.
+
+pc.nix
+bare bone image with cmd line tools
+
+server.nix
+Runs an nginx web server
+
+dns-server.nix
+runs a name server for labs
+
+desktop.nix
+Has web browser and terminal
+Auto logs to xmonad xfce session
+Browser is started on workspace 1
+Terminal is started on workspace 2
+To switch workspaces use ALT + 1, ALT + 2, etc.
+Good for checking things like web servers or anything that supports web browser access.
